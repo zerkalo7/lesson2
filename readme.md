@@ -23,7 +23,7 @@ echo "DEVICE partitions" | sudo tee -a /etc/mdadm/mdadm.conf
 sudo mdadm --detail -sv | awk '/ARRAY/{print}' | sudo tee -a /etc/mdadm/mdadm.conf
 ```
 
-Создаем GPT и 5 партиций и маунтим
+Создаем GPT, 5 партиций и маунтим
 ```
 sudo parted -s /dev/md0 mklabel gpt
 sudo parted /dev/md0 mkpart primary ext4 0% 20%
