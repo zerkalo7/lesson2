@@ -36,4 +36,4 @@ sudo mkdir -p /raid/part{1..5}
 for i in $(seq 1 5); do sudo mount /dev/md0p$i /raid/part$i; done 
 ```
 
-Для того, чтобы создание рейда происходило при сборке - добавляем всё это в Vagrantfile в shell provisioner.
+Для того, чтобы создание рейда происходило при сборке - добавляем всё это в Vagrantfile в shell provisioner
