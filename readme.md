@@ -11,6 +11,7 @@
                 }
 ```
 
+После сборки системы (vagrant up):
 Собираем R5
 ```
 mdadm -Cv /dev/md0 -l 5 -n 5 /dev/sd{b..f}
