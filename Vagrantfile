@@ -75,18 +75,18 @@ Vagrant.configure("2") do |config|
 		cp ~vagrant/.ssh/auth* ~root/.ssh
 		yum install -y mdadm smartmontools hdparm gdisk nano wget tree xfsdump
 #		mdadm -Cv /dev/md0 -l 5 -n 4 /dev/sd{c..f}
-#		sudo mkdir /etc/mdadm
-#		echo "DEVICE partitions" | sudo tee -a /etc/mdadm/mdadm.conf
-#		sudo mdadm --detail -sv | awk '/ARRAY/{print}' | sudo tee -a /etc/mdadm/mdadm.conf
-#		sudo parted -s /dev/md0 mklabel gpt
-#		sudo parted /dev/md0 mkpart primary ext4 0% 20%
-#		sudo parted /dev/md0 mkpart primary ext4 20% 40%
-#		sudo parted /dev/md0 mkpart primary ext4 40% 60%
-#		sudo parted /dev/md0 mkpart primary ext4 60% 80%
-#		sudo parted /dev/md0 mkpart primary ext4 80% 100%
-#		for i in $(seq 1 5); do sudo mkfs.ext4 /dev/md0p$i; done
-#		sudo mkdir -p /raid/part{1..5}
-#		for i in $(seq 1 5); do sudo mount /dev/md0p$i /raid/part$i; done 
+#		mkdir /etc/mdadm
+#		echo "DEVICE partitions" | tee -a /etc/mdadm/mdadm.conf
+#		mdadm --detail -sv | awk '/ARRAY/{print}' | tee -a /etc/mdadm/mdadm.conf
+#		parted -s /dev/md0 mklabel gpt
+#		parted /dev/md0 mkpart primary ext4 0% 20%
+#		parted /dev/md0 mkpart primary ext4 20% 40%
+#		parted /dev/md0 mkpart primary ext4 40% 60%
+#		parted /dev/md0 mkpart primary ext4 60% 80%
+#		parted /dev/md0 mkpart primary ext4 80% 100%
+#		for i in $(seq 1 5); do mkfs.ext4 /dev/md0p$i; done
+#		mkdir -p /raid/part{1..5}
+#		for i in $(seq 1 5); do mount /dev/md0p$i /raid/part$i; done 
   	  SHELL
 
       end
